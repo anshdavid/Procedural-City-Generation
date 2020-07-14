@@ -8,20 +8,13 @@ Documentation can be found [here](http://josauder.github.io/procedural_city_gene
 
 # Changelog
 
-## [Version] - 2020-07-14
-
-### Added
-
-- Add item
-
-### Changed
-
-- Change item
+## [0.3] - 2020-07-14
 
 ### Fixed
 
-- Fixed item
+- transition pyqt4 -> pyqt5
+- temporarily fix blender visualization bugs
 
-### Removed
+### Todo
 
-- Remove item
+- fix blender api calls
