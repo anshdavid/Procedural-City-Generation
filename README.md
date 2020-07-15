@@ -2,11 +2,22 @@
 
 This is fork from [Procedural City Generation](https://github.com/josauder/procedural_city_generation) by [josauder](https://github.com/josauder)
 
-Documentation can be found [here](http://josauder.github.io/procedural_city_generation) 
+Documentation can be found [here](http://josauder.github.io/procedural_city_generation)
 
 ---
 
 # Changelog
+
+## [0.4] - 2020-07-15
+
+### Fixed
+
+- Minor crashes when generating road network
+
+### Todo
+
+- fix blender api calls
+
 
 ## [0.3] - 2020-07-14
 
