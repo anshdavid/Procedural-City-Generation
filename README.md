@@ -4,7 +4,11 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 
 Documentation can be found [here](http://josauder.github.io/procedural_city_generation)
 
----
+
+# Running the program
+
+`python3 GUI.py`
+
 
 # Changelog
 
