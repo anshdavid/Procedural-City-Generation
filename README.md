@@ -1,6 +1,6 @@
 # Procedural City Generation
 
-This is fork from [Procedural City Generation](https://github.com/josauder/procedural_city_generation) by [josauder](https://github.com/josauder)
+This is a fork from [Procedural City Generation](https://github.com/josauder/procedural_city_generation) by [josauder](https://github.com/josauder)
 
 Documentation can be found [here](http://josauder.github.io/procedural_city_generation)
 
