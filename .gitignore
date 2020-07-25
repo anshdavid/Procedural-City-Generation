@@ -76,3 +76,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# manual
+doc/videos
+.vscode

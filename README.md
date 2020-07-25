@@ -5,9 +5,9 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 Documentation can be found [here](http://josauder.github.io/procedural_city_generation)
 
 
-# Running the program
+## Running the program
 
-`python3 GUI.py`
+> `python3 GUI.py`
 
 
 # Changelog
@@ -16,7 +16,7 @@ Documentation can be found [here](http://josauder.github.io/procedural_city_gene
 
 ### Fixed
 
-- Minor crashes when generating road network
+- crashes when generating road network
 
 ### Todo
 
