@@ -76,3 +76,5 @@ docs/_build/
 
 # PyBuilder
 target/
+doc/videos/procedural-city-generation.webm
+.vscode/launch.json
