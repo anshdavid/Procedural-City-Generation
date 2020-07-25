@@ -29,7 +29,6 @@ def createtexture(name, scale, texturetype='REPEAT'):
 
     warnings.warn("blender api's skipped!!")
 
-    return mat
     # TODO fix error
     mat.use_nodes=True
     imagenode = mat.node_tree.nodes.new("ShaderNodeTexImage")
@@ -50,6 +49,7 @@ def createtexture(name, scale, texturetype='REPEAT'):
     coordsnode= mat.node_tree.nodes.new("ShaderNodeTexCoord")
     mat.node_tree.links.new(coordsnode.outputs['Generated'], mappingnode.inputs[0])
     # @TODO -------
+
     #materialslist.append(mat)
     return mat
 
