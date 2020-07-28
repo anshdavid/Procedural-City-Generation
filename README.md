@@ -4,9 +4,24 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 
 ---
 
-### I plan on maintaining this fork. For active development please switch to development branch !! 
+### For active development please switch to development branch !! 
+
+I plan on maintaining this fork. Kindly open issues if you encounter bugs / need fixes.
 
 ---
+
+
+## Dependencies
+
+- pyqt5
+- numpy
+- matplotlib
+- json
+- pickle
+- PIL
+- scipy
+- importlib
+- pkgutil
 
 
 ## Running the program
