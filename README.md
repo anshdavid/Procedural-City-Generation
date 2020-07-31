@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 ## [0.4.8] - 2020-07-30
 
@@ -9,6 +9,7 @@
 ### Fixed
 
 - Possible fix for **issues #1**
+- Matplotlib backend for qt5
 
 ### Todo
 
