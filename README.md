@@ -6,7 +6,6 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 
 ---
 
-
 ## Dependencies
 
 - pyqt5
