@@ -2,11 +2,7 @@
 
 This is fork from [Procedural City Generation](https://github.com/josauder/procedural_city_generation). All credits go to by [josauder](https://github.com/josauder). Documentation can be found [here](http://josauder.github.io/procedural_city_generation).
 
----
-
-### For active development please switch to development branch !! 
-
-I plan on maintaining this fork. Kindly open issues if you encounter bugs / need fixes.
+#### Kindly open issues if you encounter bugs / need fixes.
 
 ---
 
