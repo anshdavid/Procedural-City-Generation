@@ -26,6 +26,15 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 
 ![Demo](./doc/videos/procedural-city-generation.gif)
 
+![roadnetwork](./doc/images/demo-1.png)
+
+![polygons](./doc/images/demo-2.png)
+
+![building](./doc/images/demo-3.png)
+
+![blender](./doc/images/demo-4.png)
+
+
 # Changelog
 
 ## [0.4.8] - 2020-07-30
@@ -37,6 +46,7 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 ### Fixed
 
 - Possible fix for **issues #1**
+- Matplotlib backend for qt5
 
 ### Todo
 
@@ -51,7 +61,6 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 ### Todo
 
 - fix blender api calls
-
 
 ## [0.3] - 2020-07-14
 
