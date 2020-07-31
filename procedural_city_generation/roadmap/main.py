@@ -4,7 +4,7 @@ from __future__ import division
 gui=None
 
 
-def main():
+def submain():
     from procedural_city_generation.roadmap.config import config
     from copy import copy
 
@@ -32,9 +32,9 @@ def main():
 
             gui.set_xlim((-singleton.border[0], singleton.border[0]))
             gui.set_ylim((-singleton.border[1], singleton.border[1]))
+  
     i=0
-    while (front!=[] or singleton.global_lists.vertex_queue    !=[]):
-
+    while (front!=[] or singleton.global_lists.vertex_queue!=[]):
         i+=1
         front=iteration(front)
 
@@ -60,7 +60,19 @@ def main():
     if gui is None and singleton.plot == 1:
         if singleton.plot == 1:
             plt.show()
+
     return 0
+
+def main():
+
+    try:
+        _subMain()
+    except Exception:
+        import traceback, warnings
+        warnings.warn(":warning: \nre-runing because exception caught")
+        traceback.print_exc()
+    else:
+        print("end...")
 
 
 if __name__ == '__main__':

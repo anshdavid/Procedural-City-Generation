@@ -1,4 +1,5 @@
 from __future__ import division
+import warnings
 import numpy as np
 from procedural_city_generation.polygons.Polygon2D import Polygon2D
 from procedural_city_generation.additional_stuff.Singleton import Singleton
@@ -39,22 +40,27 @@ def getBlock(wedges, vertex_list):
 
         #Calculate position of new vertex
         alpha = wedges[i-1].alpha
-        a, b, c = old_vertices[i-2], old_vertices[i-1], old_vertices[i]
-        v1 = a.coords - b.coords
-        v2 = c.coords - b.coords
-        n1 = np.array((-v1[1], v1[0]))/np.linalg.norm(v1)
-        n2 = np.array((v2[1], -v2[0]))/np.linalg.norm(v2)
+        try:
+            a, b, c = old_vertices[i-2], old_vertices[i-1], old_vertices[i]
+        except Exception:
+            warnings.warn(":warning: exception caught")
+            print(f"{i} a:{i-2} b:{i-1} c:{i}")
+        else:
+            v1 = a.coords - b.coords
+            v2 = c.coords - b.coords
+            n1 = np.array((-v1[1], v1[0]))/np.linalg.norm(v1)
+            n2 = np.array((v2[1], -v2[0]))/np.linalg.norm(v2)
 
-        #Change lengths of normal vectors depending on whether each
-        #edge is a minor road or a main road
-        if b.minor_road or a.minor_road:
-            n1 *= singleton.minor_factor
-        else:
-            n1 *= singleton.main_factor
-        if b.minor_road or c.minor_road:
-            n2 *= singleton.minor_factor
-        else:
-            n2 *= singleton.main_factor
+            #Change lengths of normal vectors depending on whether each
+            #edge is a minor road or a main road
+            if b.minor_road or a.minor_road:
+                n1 *= singleton.minor_factor
+            else:
+                n1 *= singleton.main_factor
+            if b.minor_road or c.minor_road:
+                n2 *= singleton.minor_factor
+            else:
+                n2 *= singleton.main_factor
 
         #Check if current vertex is dead end
         if not 0 - 0.001 < alpha < 0 + 0.001:
@@ -63,7 +69,8 @@ def getBlock(wedges, vertex_list):
             try:
                 intersection = np.linalg.solve(np.array(((v1), (v2))).T, (b.coords+n2)-(b.coords+n1))
             except np.linalg.LinAlgError:
-                raise Exception(str(v1)+", "+str(v2), "angle: "+str(wedges[i-1].alpha))
+                warnings.warn(f"{str(v1)}, {str(v2)} angle:{str(wedges[i-1].alpha)}")
+                return [old_poly]
             new = b.coords + n1 + intersection[0]*v1
             #Check if new vertex is in old polygon
             if p_in_poly(old_poly.edges, new):

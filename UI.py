@@ -2,6 +2,7 @@ import os
 import sys
 import procedural_city_generation
 donemessage = "\n"+(150*"-")+"\n\t\t\t  Done, waiting for command\n"+(150*"-")+"\n"
+errormessage = "\n"+(150*"-")+"\n\t\t\t  Exception Caught, Re-run\n"+(150*"-")+"\n"
 path = os.path.dirname(procedural_city_generation.__file__)
 sys.path.append(path)
 if not os.path.exists(path+"/temp/"):
@@ -55,21 +56,47 @@ def setBuilding_generationGUI(gui):
 
 
 def roadmap():
-    roadmap_main.main()
-    Singleton("roadmap").kill()
-    print(donemessage)
+    try:
+        Singleton("roadmap").kill()
+        roadmap_main.submain()
+    except Exception:
+        import traceback, warnings
+        warnings.warn(":warning: exception caught")
+        traceback.print_exc()
+        print(errormessage)
+    else:
+        print(donemessage)
+    finally:
+        Singleton("roadmap").kill()
 
 
 def polygons():
-    polygons_main.main(None)
-    Singleton("polygons").kill()
-    print(donemessage)
+    try:
+        Singleton("polygons").kill()
+        polygons_main.submain()
+    except Exception:
+        import traceback, warnings
+        warnings.warn(":warning: exception caught")
+        traceback.print_exc()
+        print(errormessage)
+    else:
+        print(donemessage)
+    finally:
+        Singleton("polygons").kill()
 
 
 def building_generation():
-    building_generation_main.main()
-    Singleton("building_generation").kill()
-    print(donemessage)
+    try:
+        building_generation_main.submain()
+    except Exception:
+        import traceback, warnings
+        warnings.warn(":warning: exception caught")
+        traceback.print_exc()
+        print(errormessage)
+    else:
+        print(donemessage)
+    finally:
+        Singleton("building_generation").kill()
 
 
 def visualization():

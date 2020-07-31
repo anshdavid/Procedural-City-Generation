@@ -28,6 +28,7 @@ def createtexture(name, scale, texturetype='REPEAT'):
     mat=bpy.data.materials.new(name)
 
     warnings.warn("blender api's skipped!!")
+    return mat
 
     # TODO fix error
     mat.use_nodes=True
