@@ -43,10 +43,9 @@ class GUI(QtWidgets.QMainWindow):
         self.ui.roadmap_Run.clicked.connect(self.start_roadmap)
         self.createTable("roadmap")
         self.ui.roadmap_splitter.setSizes([90, 800])
-
         self.ui.roadmap_table.hide()
-        #### 2: POLYGONS ####
 
+        #### 2: POLYGONS ####
         UI.setPolygonsGUI(self)
         self.ui.polygons_widget.hide()
         self.ui.polygons_Run.clicked.connect(self.start_polygons)

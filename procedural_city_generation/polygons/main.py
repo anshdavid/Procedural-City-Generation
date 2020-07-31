@@ -3,7 +3,7 @@ from procedural_city_generation.additional_stuff.Singleton import Singleton
 
 gui=None
 
-def main(vertex_list=None):
+def submain(vertex_list=None):
     '''Input: list of vertices representing the Roadmap
     Output: List of all Polygon2Ds representing Lots,
     List of all Polygon2Ds representing Blocks
@@ -28,9 +28,6 @@ def main(vertex_list=None):
     polylist=construct_polygons.getPolygon2Ds(vertex_list)
 
     print("Polygon2Ds extracted")
-
-
-
 
     #TODO: DISCUSS
     from procedural_city_generation.polygons.getLots import getLots as getLots
@@ -66,10 +63,23 @@ def main(vertex_list=None):
 
     return 0
 
+def main():
+
+    try:
+        _submain()
+    except Exception:
+        import traceback, warnings
+        warnings.warn(":warning: \nre-runing because exception caught")
+        traceback.print_exc()
+    else:
+        flag = False
+        print("end...")
+
+
 if __name__ == '__main__':
     from procedural_city_generation.polygons.parent_path import parent_path
     import sys
     sys.path.append(parent_path(depth=3))
-    main(None)
+    main()
 
 

@@ -1,6 +1,7 @@
 
 try:
     import bpy, os, sys
+    import warnings
 except:
     pass
 
@@ -25,7 +26,11 @@ def createtexture(name, scale, texturetype='REPEAT'):
 
 
     mat=bpy.data.materials.new(name)
+
+    warnings.warn("blender api's skipped!!")
     return mat
+
+    # TODO fix error
     mat.use_nodes=True
     imagenode = mat.node_tree.nodes.new("ShaderNodeTexImage")
     mat.node_tree.nodes.active = imagenode
@@ -33,7 +38,6 @@ def createtexture(name, scale, texturetype='REPEAT'):
     imagenode.projection='BOX'
 
     imagenode.vector_type='Vector'
-    # @TODO commented here
     diffusenode=mat.node_tree.nodes['Diffuse BSDF']
     mat.node_tree.links.new(imagenode.outputs['Color'], diffusenode.inputs[0])
 
@@ -115,7 +119,7 @@ def createobject(verts, faces, texname, texscale, shrinkwrap):
         wrap.offset=conf_values[u'offset'][u'value']
 
     bpy.context.collection.objects.link(ob)
-    
+
 
 def setupscenery():
     """
@@ -150,7 +154,7 @@ def main(points, triangles, polygons):
 
     """
 
-        
+
     setupscenery()
 
     me=bpy.data.meshes.new('Floormesh')

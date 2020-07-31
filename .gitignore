@@ -78,3 +78,7 @@ docs/_build/
 target/
 doc/videos/procedural-city-generation.webm
 .vscode/launch.json
+
+# manual
+doc/videos
+.vscode

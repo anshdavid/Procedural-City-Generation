@@ -32,11 +32,25 @@ I plan on maintaining this fork. Kindly open issues if you encounter bugs / need
 
 # Changelog
 
+## [0.4.8] - 2020-07-30
+
+### Added
+
+- exception handling in getBlock.py to handle out of range indexes when calcaulating 'dead ends' lineno[45, 71]
+
+### Fixed
+
+- Possible fix for **issues #1**
+
+### Todo
+
+- fix blender api calls
+
 ## [0.4] - 2020-07-15
 
 ### Fixed
 
-- Minor crashes when generating road network
+- crashes when generating road network
 
 ### Todo
 
