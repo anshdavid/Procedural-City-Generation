@@ -36,7 +36,7 @@ I plan on maintaining this fork. Kindly open issues if you encounter bugs / need
 
 ### Added
 
-- exception handling in getBlock.py to handle out of range indexes when calcaulating 'dead ends' lineno[45, 71]
+- exception handling in `getBlock.py` to handle out of range indexes when calcaulating 'dead ends' lineno[45, 71]
 
 ### Fixed
 
