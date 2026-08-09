@@ -32,3 +32,8 @@ This is fork from [Procedural City Generation](https://github.com/josauder/proce
 ![building](./doc/images/demo-3.png)
 
 ![blender](./doc/images/demo-4.png)
+
+## Common Issues
+
+- **Missing `temp` or `outputs` folders**: The program expects `temp` and `outputs` directories inside `procedural_city_generation/`. If you encounter errors during the *Roadmap Generation* or subsequent steps, manually create these folders.
+- **Blender not found**: If the *Visualize in Blender* tab throws `'blender' is not recognized as an internal or external command`, ensure Blender's installation path is added to your system's `PATH` environment variable. Restart your terminal/command prompt after updating the environment variable.
